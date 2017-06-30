@@ -1,7 +1,7 @@
 # cluster-config
-## Princeton research computing cluster configuration files
+Princeton research computing cluster configuration files
 
-# Set-up
+## Installation
 1. Clone the repository
 2. Source `.bash_profile` from `.bash_profile` or `.bashrc` if it exists:
     ```
@@ -22,3 +22,4 @@
         ```
     * Tmux: 
         * `if-shell "test -f $CONFIG_PATH/.tmux.conf" "source $CONFIG_PATH/.tmux.conf"`
+4. Set up symlinks to other files, such as `.gitconfig`
