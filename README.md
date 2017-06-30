@@ -16,7 +16,9 @@
         * `if-shell "test -f /path/to/cluster-config/.tmux.conf" "source /path/to/cluster-config/.tmux.conf"`
 3. Source `.bash_profile` from `.bash_profile` or `.bashrc` if it exists:
 ```
-if [ -f /path/to/cluster-config/.bash_profile ]; then
-    . /path/to/cluster-config/.bash_profile
+export CONFIG_PATH="/path/to/cluster-config"
+if [ -f "$CONFIG_PATH/.bash_profile" ]; then
+    . "$CONFIG_PATH/.bash_profile"
 fi
 ```
+Other config files may use `CONFIG_PATH`, so make sure you export this environment variable in one of your `bash` configuration files.

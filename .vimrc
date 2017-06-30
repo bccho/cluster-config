@@ -104,4 +104,5 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 """" Plugins """"
-execute pathogen#infect($CONFIG_PATH . "/.vim/bundle/{}")
+execute pathogen#infect('bundle/{}', $CONFIG_PATH . '/.vim/bundle/{}')
+Helptags
