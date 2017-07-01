@@ -1,6 +1,6 @@
 ## Environment variables
-# ~/bin
-export PATH=$HOME/bin:$PATH
+# ~/bin and this config directory's bin folder
+export PATH=$HOME/bin:$CONFIG_PATH/bin:$PATH
 
 # Default editors
 export EDITOR=/usr/bin/vim
