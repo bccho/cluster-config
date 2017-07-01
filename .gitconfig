@@ -3,7 +3,7 @@
     stat = status
     st = stash
     stp = stash pop
-    pullall = pull -p origin
+    pullall = pull -p origin --all
     pushall = push -u origin --all
     a = add .
     needpull = fetch -v --dry-run
