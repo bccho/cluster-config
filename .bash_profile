@@ -23,10 +23,13 @@ alias v='vim'
 alias vr='vim -R'
 alias tmux='tmux -2'
 alias tm='tmux'
-alias py="python"
-alias ipy="ipython"
-alias pyac="source activate"
-alias pydeac="source deactivate"
+alias py='python'
+alias ipy='ipython'
+alias pyac='source activate'
+alias pydeac='source deactivate'
+alias tl='tmux ls'
+alias tn='tmux new -s'
+alias ta='tmux attach -t'
 
 # tmux for python cellmode
 alias vtm="vim -c 'let cellmode_tmux_sessionname=\"$(tmux display-message -p '#S')\"' -c 'let cellmode_use_tmux=1' -c 'let cellmode_tmux_panenumber=1' -c 'let cellmode_tmux_windowname=\"win\"'"
@@ -52,6 +55,21 @@ confirm () {
 alias sq='squeue -u bccho'
 alias wsq='watch -n 1 squeue -u bccho'
 alias scall='confirm && scancel -u bccho'
+
+## Convenience functions
+# Mail myself a file
+# Argument 1: email subject
+# Arguments 2-: attachments
+mailme () {
+    text="mailx -s $1"
+    shift
+    for fname in "$@"; do
+        text="$text -a $fname"
+    done
+    text="$text bccho@princeton.edu"
+    echo $text
+    echo "Sent from $HOSTNAME" | eval $text
+}
 
 ## Fasd
 eval "$(fasd --init auto)"
