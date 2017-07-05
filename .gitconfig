@@ -7,6 +7,7 @@
     pushall = push -u --all
     a = add .
     needpull = fetch -v --dry-run
+    slog = log --pretty=format:'%C(auto,yellow)%h%C(auto,magenta)% G? %C(auto,blue)%>(15,trunc)%ad %C(auto,green)%aN %C(auto,reset)%s%C(auto,red)% gD' --date=relative
 [push]
     default = simple
 [user]
