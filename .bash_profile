@@ -61,7 +61,7 @@ alias scall='confirm && scancel -u bccho'
 # Argument 1: email subject
 # Arguments 2-: attachments
 mailme () {
-    text="mailx -s $1"
+    text="mailx -s '$1'"
     shift
     for fname in "$@"; do
         text="$text -a $fname"
@@ -69,6 +69,15 @@ mailme () {
     text="$text bccho@princeton.edu"
     echo $text
     echo "Sent from $HOSTNAME" | eval $text
+}
+
+# Trash
+trash () {
+    if [ -z ${TRASH_PATH+x} ]; then
+        echo 'Error: environment variable $TRASH_PATH not set!'
+    else
+        mv "$1" "$TRASH_PATH"
+    fi
 }
 
 ## Fasd
