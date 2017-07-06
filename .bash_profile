@@ -85,10 +85,13 @@ trash () {
 eval "$(fasd --init auto)"
 
 ## Fuzzy bash completion
-[[ $PS1 && -f $CONFIG_PATH/bin/bash-completion/bash_completion ]] && \
-    . $CONFIG_PATH/bin/bash-completion/bash_completion
+source $CONFIG_PATH/bin/bash-completion/bash_completion
 source $CONFIG_PATH/bin/fuzzy_bash_completion
 fuzzy_replace_filedir_xspec
-fuzzy_setup_for_command cd
 fuzzy_setup_for_command ls
+fuzzy_setup_for_command cd
+fuzzy_setup_for_command mv
+fuzzy_setup_for_command cp
+fuzzy_setup_for_command vim
+fuzzy_setup_for_command v
 
