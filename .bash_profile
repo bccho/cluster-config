@@ -76,8 +76,8 @@ trash () {
     if [ -z ${TRASH_PATH+x} ]; then
         echo 'Error: environment variable $TRASH_PATH not set!'
     else
-        echo mv "$1" "$TRASH_PATH"
-        mv "$1" "$TRASH_PATH"
+        echo mv "$@" -t "$TRASH_PATH"
+        mv "$@" -t "$TRASH_PATH"
     fi
 }
 
