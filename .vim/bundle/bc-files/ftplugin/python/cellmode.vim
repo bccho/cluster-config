@@ -283,8 +283,10 @@ endfunction
 call InitVariable("g:cellmode_default_mappings", 1)
 
 if g:cellmode_default_mappings
-    vnoremap <silent> <C-M> :call RunTmuxPythonChunk()<CR>
-    nnoremap <silent> <C-M> :call RunTmuxPythonCell(1)<CR>
-    nnoremap <silent> <TAB> :call NextPythonCell()<CR>
-    nnoremap <silent> <S-TAB> :call PreviousPythonCell()<CR>
+    if exists('cellmode_use_tmux')
+        vnoremap <silent> <C-M> :call RunTmuxPythonChunk()<CR>
+        nnoremap <silent> <C-M> :call RunTmuxPythonCell(1)<CR>
+        nnoremap <silent> <TAB> :call NextPythonCell()<CR>
+        nnoremap <silent> <S-TAB> :call PreviousPythonCell()<CR>
+    endif
 endif
