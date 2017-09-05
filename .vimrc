@@ -2,6 +2,10 @@
 :nnoremap <silent><esc> :noh<CR>
 :nnoremap <esc>^[ <esc>^[
 
+"""" Plugins """"
+execute pathogen#infect('bundle/{}', $CONFIG_PATH . '/.vim/bundle/{}')
+Helptags
+
 """" EDITING """"
 " Filetype detection
 filetype plugin on
@@ -102,7 +106,3 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-
-"""" Plugins """"
-execute pathogen#infect('bundle/{}', $CONFIG_PATH . '/.vim/bundle/{}')
-Helptags
