@@ -90,8 +90,8 @@ set display=lastline
 
 " Coloring
 syntax on
-set background=light
-colorscheme solarized
+set background=dark
+colorscheme gruvbox
 
 " Reset syntax highlighting when it goes wrong
 noremap <F12> <Esc>:syntax sync fromstart<CR>
