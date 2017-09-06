@@ -19,8 +19,10 @@ export GIT_PS1_SHOWUNTRACKEDFILES=1
 
 # Color
 export CLICOLOR=1
+export TERM=xterm-256color
 
 ## Aliases
+alias ll='ls -lh'
 alias g='git'
 alias v='vim'
 alias vr='vim -R'
@@ -28,8 +30,12 @@ alias tmux='tmux -2'
 alias tm='tmux'
 alias py='python'
 alias ipy='ipython'
-alias pyac='source activate'
-alias pydeac='source deactivate'
+alias cdac='source activate'
+alias cddeac='source deactivate'
+alias pyac='source env/bin/activate'
+alias pydeac='deactivate'
+
+# tmux shortcuts
 alias tl='tmux ls'
 alias tn='tmux new -s'
 alias ta='tmux attach -t'
@@ -53,8 +59,10 @@ confirm () {
 }
 
 alias sq='squeue -u bccho'
+alias sqall='squeue | less'
 alias wsq='watch -n 1 squeue -u bccho'
 alias scall='confirm && scancel -u bccho'
+alias tf='tail -f'
 
 ## Convenience functions
 # Mail myself a file
