@@ -1,5 +1,6 @@
 [alias]
     com = commit -m
+    camend = commit --amend
     stat = status
     st = stash
     stp = stash pop

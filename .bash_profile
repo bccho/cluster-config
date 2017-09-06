@@ -4,12 +4,18 @@ export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/vim
 
 ## Visual
+# Git prompt
+source $CONFIG_PATH/bin/git-prompt.sh
 # Change terminal prompt name
 reset=$(tput sgr0)
 bold=$(tput bold)
 red=$(tput setaf 1)
 yellow=$(tput setaf 3)
-export PS1="\[$bold\]\[$red\]\h:\[$reset\]\w\n\[$yellow\]\u\[$reset\]$ "
+# export PS1="\[$bold\]\[$red\]\h:\[$reset\]\w\[$yellow\]\n\[$yellow\]\u\[$reset\]$ "
+export PROMPT_COMMAND='__git_ps1 "\[$bold\]\[$red\]\h:\[$reset\]\w\[$yellow\]" "\n\[$yellow\]\u\[$reset\]$ "'
+export GIT_PS1_SHOWDIRTYSTATE=1
+export GIT_PS1_SHOWSTASHSTATE=1
+export GIT_PS1_SHOWUNTRACKEDFILES=1
 
 # Color
 export CLICOLOR=1
