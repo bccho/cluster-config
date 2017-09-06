@@ -110,6 +110,11 @@ vtm () {
     vim --cmd "let cellmode_use_tmux=1" -c "let cellmode_tmux_sessionname=\"$(tmux display-message -p '#S')\"" -c "let cellmode_tmux_panenumber=1" -c "let cellmode_tmux_windowname=\"$(tmux display-message -p '#W')\"" "$@"
 }
 
+# Set DISPLAY variable
+setdisp() {
+    export DISPLAY="localhost:$1.0"
+}
+
 
 ## Fasd
 eval "$(fasd --init auto)"
