@@ -84,8 +84,23 @@ trash () {
     if [ -z ${TRASH_PATH+x} ]; then
         echo 'Error: environment variable $TRASH_PATH not set!'
     else
-        echo mv "$@" -t "$TRASH_PATH"
-        mv "$@" -t "$TRASH_PATH"
+        # echo mv "$@" -t "$TRASH_PATH"
+        mv -v "$@" -t "$TRASH_PATH"
+    fi
+}
+# Restore from trash
+restore () {
+    if [ -z ${TRASH_PATH+x} ]; then
+        echo 'Error: environment variable $TRASH_PATH not set!'
+    else
+        # echo mv "$TRASH_PATH/$@" -t "$PWD"
+        mv -v "$TRASH_PATH/$@" -t "$PWD"
+    fi
+}
+# Empty trash
+emptytrash () {
+    if confirm ; then
+        rm -rf "$TRASH_PATH"/*
     fi
 }
 
