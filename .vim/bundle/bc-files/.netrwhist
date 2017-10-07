@@ -1,5 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/mnt/bucket/labs/wang/bccho/code/2017-06-29_Automated_proofreading'
-let g:netrw_dirhist_2='/mnt/bucket/people/bccho/config/cluster_config/.vim/bundle/bc-files/ftplugin/python'
-let g:netrw_dirhist_3='/mnt/bucket/people/bccho/config/cluster_config/.vim/bundle/bc-files'
