@@ -24,8 +24,10 @@ autocmd FileType make setlocal noexpandtab
 
 " Indents
 set autoindent
-set breakindent
-set breakindentopt=shift:8
+if exists(":breakindent")
+    set breakindent
+    set breakindentopt=shift:8
+endif
 
 " Line numbers
 set number
