@@ -12,10 +12,12 @@ bold=$(tput bold)
 red=$(tput setaf 1)
 yellow=$(tput setaf 3)
 # export PS1="\[$bold\]\[$red\]\h:\[$reset\]\w\[$yellow\]\n\[$yellow\]\u\[$reset\]$ "
-export PROMPT_COMMAND='__git_ps1 "\[$bold\]\[$red\]\h:\[$reset\]\w\[$yellow\]" "\n\[$yellow\]\u\[$reset\]$ "'
-export GIT_PS1_SHOWDIRTYSTATE=1
-export GIT_PS1_SHOWSTASHSTATE=1
-export GIT_PS1_SHOWUNTRACKEDFILES=1
+export PROMPT_COMMAND='__git_ps1 "\[$bold\]\[$red\]\h:\[$reset\]\w" "\n\[$yellow\]\u\[$reset\]$ "'
+export GIT_PS1_SHOWCOLORHINTS=true
+export GIT_PS1_SHOWDIRTYSTATE=true
+export GIT_PS1_SHOWSTASHSTATE=true
+export GIT_PS1_SHOWUNTRACKEDFILES=true
+export GIT_PS1_STATESEPARATOR=""
 
 # Color
 export CLICOLOR=1
@@ -58,9 +60,9 @@ confirm () {
      esac
 }
 
-alias sq='squeue -u bccho'
-alias sqall='squeue | less'
-alias wsq='watch -n 1 squeue -u bccho'
+alias sq='squeue -u bccho -o "%.16i %.9P %.8j %.8u %.20S %.2t %.10M %.6D %.10R"'
+alias sqall='squeue -a -o "%.16i %.9P %.8j %.8u %.10l %.20S %.2t %.10M %.6D %.10R" | less'
+alias wsq='watch -n 1 "squeue -u bccho -o \"%.16i %.9P %.8j %.8u %.20S %.2t %.10M %.6D %.10R\""'
 alias scall='confirm && scancel -u bccho'
 alias tf='tail -f'
 
