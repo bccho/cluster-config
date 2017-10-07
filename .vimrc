@@ -96,6 +96,8 @@ set display=lastline
 syntax on
 set background=dark
 colorscheme gruvbox
+" Statusline colors
+hi StatusLine ctermbg=black ctermfg=blue
 
 " Reset syntax highlighting when it goes wrong
 noremap <F12> <Esc>:syntax sync fromstart<CR>
