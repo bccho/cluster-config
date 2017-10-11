@@ -60,11 +60,17 @@ confirm () {
      esac
 }
 
-alias sq='squeue -u bccho -o "%.16i %.9P %.8j %.8u %.20S %.2t %.10M %.6D %.10R"'
-alias sqall='squeue -a -o "%.16i %.9P %.8j %.8u %.10l %.20S %.2t %.10M %.6D %.10R" | less'
-alias wsq='watch -n 1 "squeue -u bccho -o \"%.16i %.9P %.8j %.8u %.20S %.2t %.10M %.6D %.10R\""'
-alias scall='confirm && scancel -u bccho'
+# alias sq='squeue -u bccho -o "%.16i %.9P %.8j %.8u %.20S %.2t %.5C %.10m %.10M %.6D %.10R"'
+# alias sqall='squeue -a -o "%.16i %.9P %.8j %.8u %.10l %.20S %.2t %.5C %.10m %.10M %.6D %.10R" | less'
+# alias wsq='watch -n 1 "squeue -u bccho -o \"%.16i %.9P %.8j %.8u %.20S %.2t %.5C %.10m %.10M %.6D %.10R\""'
+# alias scall='confirm && scancel -u bccho'
 alias tf='tail -f'
+
+SQUEUE_FORMAT="%.16i %.9P %.8j %.8u %.20S %.2t %.5C %.10m %.10M %.6D %.10R"
+alias sq="squeue -u bccho -o \"$SQUEUE_FORMAT\""
+alias sqall="squeue -a -o \"$SQUEUE_FORMAT\" | less"
+alias wsq="watch -n 1 'squeue -u bccho -o \"$SQUEUE_FORMAT\"'"
+alias scall='confirm && scancel -u bccho'
 
 ## Convenience functions
 # Mail myself a file
